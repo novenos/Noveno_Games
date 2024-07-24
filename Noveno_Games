@@ -1,0 +1,24 @@
+git clone https://github.com/tu-usuario/mi-juego-web.git
+// HTML
+<div id="game">
+    <h2>Adivina el número</h2>
+    <input type="number" id="guess" placeholder="Introduce un número">
+    <button onclick="checkGuess()">Comprobar</button>
+    <p id="message"></p>
+</div>
+
+// JavaScript
+function checkGuess() {
+    var guess = document.getElementById('guess').value;
+    var randomNumber = Math.floor(Math.random() * 10) + 1; // Genera un número aleatorio del 1 al 10
+    var messageElement = document.getElementById('message');
+
+    if (guess == randomNumber) {
+        messageElement.textContent = '¡Correcto!';
+    } else {
+        messageElement.textContent = 'Incorrecto. El número era ' + randomNumber;
+    }
+}
+git add .
+git commit -m "Añadiendo juego web"
+git push origin main
